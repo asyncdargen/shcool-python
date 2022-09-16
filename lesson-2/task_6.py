@@ -1,9 +1,12 @@
-x, y = int(input("Enter x y: "))
+x, y = map(int, input("Enter x y: ").split())
 
 mx = max(x, y)
 mn = min(x, y)
 
-for i in range(mx, mn):
-    for j in range(3, i - 1):
+for i in range(mn, mx):
+    simple = True
+    for j in range(2, i - 1):
         if i % j == 0:
-print("Factorial:", factorial)
+            simple = False
+    if simple:
+        print(i)
